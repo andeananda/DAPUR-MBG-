@@ -1,10 +1,17 @@
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const { fork } = require('child_process');
+const cors = require('cors'); // 👈 TAMBAHAN: Memanggil package CORS
 
 const app = express();
 // Railway akan otomatis menentukan PORT publik di production, lokal default ke 8080
 const PORT = process.env.PORT || 8080; 
+
+// 👈 TAMBAHAN: Membuka pintu izin khusus untuk domain Vercel kamu
+app.use(cors({
+    origin: 'https://dapur-mbg-nu.vercel.app',
+    credentials: true
+}));
 
 // 1. DAFTAR MICROSERVICES & ALOKASI PORT INTERNAL
 const services = [
