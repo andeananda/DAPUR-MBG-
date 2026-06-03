@@ -32,11 +32,12 @@ services.forEach(service => {
 
 // 2. REVERSE PROXY ROUTING
 // Request dari frontend akan diteruskan secara utuh ke port internal yang sesuai
-app.use('/api/dapur', createProxyMiddleware({ target: 'http://localhost:3001', changeOrigin: true }));
-app.use('/api/distribusi', createProxyMiddleware({ target: 'http://localhost:3002', changeOrigin: true }));
-app.use('/api/inventory', createProxyMiddleware({ target: 'http://localhost:3003', changeOrigin: true }));
-app.use('/api/menu', createProxyMiddleware({ target: 'http://localhost:3004', changeOrigin: true }));
-app.use('/api/sekolah', createProxyMiddleware({ target: 'http://localhost:3005', changeOrigin: true }));
+// 2. REVERSE PROXY ROUTING
+app.use('/api/dapur', createProxyMiddleware({ target: 'http://127.0.0.1:3001', changeOrigin: true }));
+app.use('/api/distribusi', createProxyMiddleware({ target: 'http://127.0.0.1:3002', changeOrigin: true }));
+app.use('/api/inventory', createProxyMiddleware({ target: 'http://127.0.0.1:3003', changeOrigin: true }));
+app.use('/api/menu', createProxyMiddleware({ target: 'http://127.0.0.1:3004', changeOrigin: true }));
+app.use('/api/sekolah', createProxyMiddleware({ target: 'http://127.0.0.1:3005', changeOrigin: true }));
 
 // Rute dasar untuk mengecek apakah Gateway aktif
 app.get('/', (req, res) => {
