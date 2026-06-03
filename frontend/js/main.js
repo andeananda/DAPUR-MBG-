@@ -1,8 +1,8 @@
-const URL_DAPUR = "http://localhost:3001/api/dapur";
-const URL_SEKOLAH = "http://localhost:3003/api/sekolah";
-const URL_MENU = "http://localhost:3002/api/menu";
-const URL_INVENTORY = "http://localhost:3004/api/inventory";
-const URL_DISTRIBUSI = "http://localhost:3005/api/distribusi";
+const URL_DAPUR = "https://dapur-mbg-production.up.railway.app/api/dapur";
+const URL_SEKOLAH = "https://dapur-mbg-production.up.railway.app/api/sekolah";
+const URL_MENU = "https://dapur-mbg-production.up.railway.app/api/menu";
+const URL_INVENTORY = "https://dapur-mbg-production.up.railway.app/api/inventory";
+const URL_DISTRIBUSI = "https://dapur-mbg-production.up.railway.app/api/distribusi";
 
 document.addEventListener('DOMContentLoaded', async () => {
     console.log("Sistem Terinisialisasi...");
